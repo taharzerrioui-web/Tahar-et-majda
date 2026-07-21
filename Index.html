@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tahar &amp; Majda — Invitation de Mariage · 27.09.2026 · Fès</title>
+<meta name="description" content="Invitation de mariage de Tahar et Majda, le 27 Septembre 2026 à Fès.">
+
+<!-- Aperçu de lien (WhatsApp / réseaux sociaux) -->
+<meta property="og:title" content="Tahar &amp; Majda — Mariage · 27 Septembre 2026 · Fès">
+<meta property="og:description" content="Vous êtes cordialement invités à célébrer notre mariage à Fès.">
+<meta property="og:image" content="assets/img/couple.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Amiri:ital@0;1&family=Great+Vibes&family=Marcellus&display=swap" rel="stylesheet">
+
+<style>
+/* ===================================================================
+   Tahar & Majda — Invitation de Mariage
+   Palette : rose bébé + or + touches émeraude (fassi), style cinématique
+   =================================================================== */
+
+:root {
+  --pink: #f7d7de;
+  --pink-soft: #fdeef1;
+  --pink-deep: #e8a9bd;
+  --gold: #c9a24b;
+  --gold-light: #f1dfa8;
+  --gold-deep: #9c7a2e;
+  --emerald: #0f5c4a;
+  --emerald-deep: #0a3d31;
+  --cream: #fffaf6;
+  --ink: #3a2b2f;
+  --ink-soft: #6b5a5e;
+
+  --font-display: 'Great Vibes', cursive;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-title: 'Marcellus', serif;
+  --font-arabic: 'Amiri', serif;
+
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--cream), var(--pink-soft));
+  color: var(--ink);
+  font-family: var(--font-serif);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+.ar { font-family: var(--font-arabic); direction: rtl; unicode-bidi: isolate; }
+
+/* ---------- Sparkle canvas ---------- */
+#sparkle-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: screen;
+}
+
+/* ===================================================================
+   INTRO / OUVERTURE CINÉMATIQUE
+   =================================================================== */
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1800px;
+  background: radial-gradient(circle at 50% 30%, #164338 0%, var(--emerald-deep) 55%, #05120e 100%);
+  transition: opacity 1s ease 0.4s, visibility 1s ease 0.4s;
+}
+.intro.opened {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.intro-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(201,162,75,0.18), transparent 40%),
+    radial-gradient(circle at 80% 75%, rgba(247,215,222,0.15), transparent 45%);
+}
+
+.gate {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+.gate-panel {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 50%;
+  background:
+    linear-gradient(135deg, var(--emerald) 0%, var(--emerald-deep) 60%),
+    repeating-linear-gradient(45deg, rgba(201,162,75,0.12) 0 2px, transparent 2px 22px);
+  box-shadow: inset 0 0 60px rgba(0,0,0,0.45);
+  transition: transform 1.4s cubic-bezier(.7,0,.2,1);
+  border: 1px solid rgba(201,162,75,0.5);
+}
+.gate-panel.left  { left: 0; transform-origin: left center; border-right: 2px solid var(--gold); }
+.gate-panel.right { right: 0; transform-origin: right center; border-left: 2px solid var(--gold); }
+.gate-panel::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid rgba(241,223,168,0.5);
+  border-radius: 4px;
+}
+.intro.opening .gate-panel.left  { transform: rotateY(-115deg); }
+.intro.opening .gate-panel.right { transform: rotateY(115deg); }
+
+.gate-frame {
+  position: absolute;
+  inset: 6px;
+  border: 3px solid var(--gold);
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--gold-light);
+  padding: 0 20px;
+  transition: opacity .6s ease, transform .6s ease;
+}
+.intro.opening .intro-content {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.intro-eyebrow {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 6px;
+  opacity: 0.85;
+}
+.intro-names {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  margin: 0;
+  color: var(--gold-light);
+  text-shadow: 0 0 30px rgba(241,223,168,0.35);
+}
+.intro-names em { font-style: normal; font-family: var(--font-serif); font-size: 0.5em; padding: 0 14px; color: var(--pink); }
+.intro-date {
+  letter-spacing: 3px;
+  margin: 6px 0 30px;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  color: var(--pink);
+}
+
+.btn-open {
+  position: relative;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--emerald-deep);
+  border: none;
+  padding: 14px 38px;
+  border-radius: 999px;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(201,162,75,0.4), 0 0 0 1px rgba(255,255,255,0.4) inset;
+  transition: transform .25s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.btn-open:hover { transform: translateY(-2px) scale(1.03); box-shadow: 0 12px 30px rgba(201,162,75,0.55); }
+.btn-open-label.ar { font-size: 0.85em; }
+
+/* ===================================================================
+   SITE PRINCIPAL
+   =================================================================== */
+.site {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.site.visible { opacity: 1; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+.reveal.in-view { opacity: 1; transform: translateY(0); }
+
+.section { position: relative; padding: 90px 20px; overflow: hidden; }
+.section-inner { max-width: 880px; margin: 0 auto; text-align: center; position: relative; z-index: 2; }
+
+.section-kicker {
+  display: inline-block;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--gold-deep);
+  font-family: var(--font-title);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  margin: 0 0 30px;
+  color: var(--emerald-deep);
+}
+
+/* Decorative repeating "zellige-like" pattern */
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image:
+    conic-gradient(from 45deg, var(--emerald) 0deg 90deg, transparent 90deg 180deg, var(--gold) 180deg 270deg, transparent 270deg 360deg);
+  background-size: 46px 46px;
+  pointer-events: none;
+}
+.hero-pattern.subtle { opacity: 0.05; }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px 100px;
+  background: radial-gradient(circle at 50% 0%, var(--pink) 0%, var(--pink-soft) 45%, var(--cream) 100%);
+}
+.hero-inner { display: flex; flex-direction: column; align-items: center; max-width: 640px; }
+
+.eyebrow { letter-spacing: 3px; text-transform: uppercase; font-size: 0.85rem; color: var(--gold-deep); margin: 18px 0 4px; }
+.names {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 11vw, 6rem);
+  margin: 6px 0;
+  color: var(--emerald-deep);
+  line-height: 1;
+}
+.names .amp { font-family: var(--font-serif); font-style: italic; font-size: 0.45em; color: var(--gold-deep); padding: 0 14px; }
+.tagline { font-size: 1.2rem; color: var(--ink-soft); margin: 6px 0; max-width: 480px; }
+.hero-meta {
+  margin-top: 22px;
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  color: var(--emerald);
+  font-size: 1rem;
+}
+.hero-meta .dot { color: var(--gold); margin: 0 10px; }
+
+.scroll-cue {
+  position: absolute;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  width: 26px; height: 42px;
+  border: 2px solid var(--gold-deep);
+  border-radius: 20px;
+}
+.scroll-cue span {
+  position: absolute;
+  top: 6px; left: 50%;
+  width: 5px; height: 5px;
+  margin-left: -2.5px;
+  border-radius: 50%;
+  background: var(--gold-deep);
+  animation: scrollcue 1.6s infinite;
+}
+@keyframes scrollcue {
+  0% { top: 6px; opacity: 1; }
+  70% { opacity: 0.3; }
+  100% { top: 24px; opacity: 0; }
+}
+
+/* ---------- Photo frames (3D tilt + gold halo) ---------- */
+.photo-frame {
+  position: relative;
+  width: 220px;
+  aspect-ratio: 4 / 5;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid var(--gold);
+  box-shadow: 0 18px 40px rgba(154,110,40,0.25), 0 0 0 6px var(--pink-soft);
+  transform-style: preserve-3d;
+  transition: transform .25s ease, box-shadow .25s ease;
+  background: linear-gradient(160deg, var(--pink-soft), var(--gold-light));
+}
+.photo-frame--hero { width: 260px; }
+.photo-frame img { width: 100%; height: 100%; object-fit: cover; animation: kenburns 14s ease-in-out infinite alternate; }
+@keyframes kenburns {
+  0%   { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.12) translate(-1.5%, -1.5%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-frame img { animation: none; }
+}
+.photo-frame .frame-glow {
+  position: absolute; inset: 0;
+  background: linear-gradient(140deg, rgba(255,255,255,0.35), transparent 40%);
+  pointer-events: none;
+}
+.photo-frame:hover { box-shadow: 0 26px 55px rgba(154,110,40,0.35), 0 0 0 6px var(--pink-soft); }
+
+.frame-fallback {
+  position: absolute; inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--gold-deep);
+  text-align: center;
+  padding: 10px;
+}
+.frame-fallback .fallback-icon { font-size: 2rem; }
+.frame-fallback .fallback-label { font-family: var(--font-title); font-size: 0.95rem; line-height: 1.4; }
+.photo-frame.no-photo img { display: none; }
+.photo-frame.no-photo .frame-fallback { display: flex; }
+
+figure.photo-frame { margin-bottom: 0; }
+figure.photo-frame figcaption {
+  margin-top: 10px;
+  font-family: var(--font-title);
+  color: var(--emerald-deep);
+  font-size: 0.95rem;
+}
+
+/* ---------- Story ---------- */
+.story-grid { display: grid; gap: 24px; text-align: left; }
+.story-text p { font-size: 1.15rem; line-height: 1.75; color: var(--ink-soft); }
+.story-text.ar { text-align: right; }
+.story-text.ar p { font-size: 1.3rem; line-height: 2; }
+
+/* ---------- Gallery ---------- */
+.gallery { background: linear-gradient(180deg, var(--cream), var(--pink-soft)); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+  margin-top: 10px;
+}
+
+/* ---------- Date / lieu / countdown ---------- */
+.when { background: linear-gradient(180deg, var(--pink-soft), var(--cream)); }
+.dynamic-date-ar { font-family: var(--font-arabic); direction: rtl; color: var(--gold-deep); font-size: 1.3rem; margin-top: -18px; margin-bottom: 30px; }
+
+.countdown { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
+.count-card {
+  background: var(--cream);
+  border: 1px solid var(--gold-light);
+  border-radius: 10px;
+  padding: 18px 16px;
+  min-width: 84px;
+  box-shadow: 0 10px 26px rgba(154,110,40,0.12);
+}
+.count-num {
+  display: block;
+  font-family: var(--font-title);
+  font-size: 2rem;
+  color: var(--emerald-deep);
+}
+.count-label { font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--ink-soft); }
+.count-label .ar { font-size: 0.9em; display: block; text-transform: none; }
+
+.venue-card {
+  background: var(--cream);
+  border: 1px solid var(--gold-light);
+  border-radius: 16px;
+  padding: 34px 24px;
+  box-shadow: 0 20px 50px rgba(154,110,40,0.15);
+}
+.venue-arch { font-size: 2.4rem; margin-bottom: 6px; }
+.venue-card h3 { font-family: var(--font-title); color: var(--emerald-deep); margin: 0 0 6px; font-size: 1.5rem; }
+.placeholder-text { color: #b0542e; font-style: italic; font-size: 0.95rem; }
+.map-embed { margin-top: 18px; border-radius: 10px; overflow: hidden; border: 1px solid var(--gold-light); }
+.map-embed iframe { width: 100%; height: 280px; border: 0; display: block; }
+
+.btn-secondary {
+  margin-top: 18px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold-deep);
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease;
+}
+.btn-secondary:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+/* ---------- Programme / timeline ---------- */
+.program { background: var(--cream); }
+.timeline { list-style: none; padding: 0; margin: 0 auto; max-width: 460px; text-align: left; position: relative; }
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: linear-gradient(var(--gold), var(--emerald));
+}
+.timeline li { position: relative; padding: 0 0 34px 34px; }
+.timeline-dot {
+  position: absolute; left: 0; top: 4px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px var(--pink-soft);
+}
+.timeline-content h4 { margin: 0 0 4px; font-family: var(--font-title); color: var(--emerald-deep); font-size: 1.05rem; }
+.timeline-content h4 .ar { display: block; font-size: 0.9em; margin-top: 2px; }
+
+/* ---------- RSVP ---------- */
+.rsvp { background: linear-gradient(180deg, var(--pink-soft), var(--pink)); }
+.rsvp-text { color: var(--ink-soft); font-size: 1.1rem; margin-bottom: 28px; }
+.btn-rsvp {
+  display: inline-block;
+  padding: 16px 42px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--emerald-deep);
+  text-decoration: none;
+  font-family: var(--font-title);
+  letter-spacing: 1px;
+  box-shadow: 0 14px 30px rgba(154,110,40,0.3);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.btn-rsvp:hover { transform: translateY(-3px); box-shadow: 0 20px 40px rgba(154,110,40,0.4); }
+
+.share-row { margin-top: 18px; }
+.btn-share {
+  display: inline-block;
+  color: var(--emerald-deep);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 0.95rem;
+}
+.btn-share:hover { color: var(--emerald); }
+
+/* ---------- Footer ---------- */
+.footer {
+  text-align: center;
+  padding: 50px 20px 40px;
+  background: var(--emerald-deep);
+  color: var(--gold-light);
+  position: relative;
+}
+.footer-names { font-family: var(--font-display); font-size: 2.2rem; margin: 10px 0 2px; }
+.footer-names .amp { font-family: var(--font-serif); font-style: italic; color: var(--pink); padding: 0 8px; }
+.footer-sub { letter-spacing: 2px; font-size: 0.85rem; opacity: 0.8; }
+
+.music-toggle {
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--gold-light);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background .25s ease, transform .25s ease;
+}
+.music-toggle:hover { background: rgba(241,223,168,0.12); transform: scale(1.06); }
+.music-toggle[aria-pressed="true"] .music-icon { animation: pulse 1.2s infinite ease-in-out; }
+.music-toggle.hidden { display: none; }
+@keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.25); } }
+
+/* ---------- Confetti / burst particles ---------- */
+.burst-particle {
+  position: fixed;
+  z-index: 90;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .section { padding: 64px 16px; }
+  .photo-frame { width: 180px; }
+  .photo-frame--hero { width: 210px; }
+  .count-card { min-width: 70px; padding: 14px 10px; }
+  .count-num { font-size: 1.5rem; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .site, .intro, .gate-panel, .intro-content { transition: none !important; }
+  .scroll-cue span, .music-toggle[aria-pressed="true"] .music-icon { animation: none !important; }
+}
+
+/* ---------- Dark mode ---------- */
+@media (prefers-color-scheme: dark) {
+  body { background: linear-gradient(180deg, #201417, #150e10); color: #f3e6e9; }
+  .hero { background: radial-gradient(circle at 50% 0%, #3a2530 0%, #201417 60%); }
+  .names, .section-title, .venue-card h3, .timeline-content h4 { color: var(--gold-light); }
+  .tagline, .story-text p, .rsvp-text { color: #d8c3c8; }
+  .count-card, .venue-card { background: #241820; border-color: #5c4a2e; }
+  .gallery, .when, .program { background: linear-gradient(180deg, #201417, #180f12); }
+  .rsvp { background: linear-gradient(180deg, #241820, #2c1c24); }
+  .photo-frame { background: linear-gradient(160deg, #2c1c24, #3a2b12); box-shadow: 0 18px 40px rgba(0,0,0,0.5), 0 0 0 6px #241820; }
+}
+</style>
+</head>
+<body>
+
+  <!-- Sparkle / gold-dust ambient canvas -->
+  <canvas id="sparkle-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================== CINEMATIC INTRO ===================== -->
+  <section id="intro" class="intro">
+    <div class="intro-bg"></div>
+    <div class="gate">
+      <div class="gate-panel left"></div>
+      <div class="gate-panel right"></div>
+      <div class="gate-frame"></div>
+    </div>
+    <div class="intro-content">
+      <p class="intro-eyebrow">Vous êtes invités · أنتم مدعوون</p>
+      <h1 class="intro-names"><span>Tahar</span><em>&amp;</em><span>Majda</span></h1>
+      <p class="intro-date">27 · 09 · 2026 — Fès</p>
+      <button id="open-invitation" class="btn-open">
+        <span class="btn-open-label">Ouvrir l'invitation</span>
+        <span class="btn-open-label ar">افتح الدعوة</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===================== MAIN SITE ===================== -->
+  <div id="site" class="site">
+
+    <!-- HERO -->
+    <header class="hero" id="accueil">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="reveal hero-inner">
+        <div class="photo-frame photo-frame--hero tilt" data-tilt>
+          <img src="assets/img/couple.jpg" alt="Tahar et Majda" loading="eager"
+               onerror="this.closest('.photo-frame').classList.add('no-photo')">
+          <div class="frame-fallback">
+            <span class="fallback-icon">✦</span>
+            <span class="fallback-label">Photo à venir<br><span class="ar">الصورة قريبًا</span></span>
+          </div>
+          <div class="frame-glow"></div>
+        </div>
+        <p class="eyebrow">Avec la bénédiction de Dieu · بحمد الله وفضله</p>
+        <h1 class="names"><span>Tahar</span><span class="amp">&amp;</span><span>Majda</span></h1>
+        <p class="tagline">ont l'immense joie de vous convier à la célébration de leur mariage</p>
+        <p class="tagline ar">يتشرفان بدعوتكم لحضور حفل زفافهما</p>
+        <div class="hero-meta">
+          <span>27 Septembre 2026</span>
+          <span class="dot">•</span>
+          <span>Fès, Maroc</span>
+        </div>
+      </div>
+      <a href="#histoire" class="scroll-cue" aria-label="Défiler">
+        <span></span>
+      </a>
+    </header>
+
+    <!-- NOTRE HISTOIRE -->
+    <section class="section story" id="histoire">
+      <div class="reveal section-inner">
+        <span class="section-kicker">Notre histoire · قصتنا</span>
+        <h2 class="section-title">Deux âmes, un même chemin</h2>
+        <div class="story-grid">
+          <div class="story-text">
+            <p>Après une belle rencontre et un chemin parcouru ensemble, Tahar &amp; Majda s'apprêtent à unir leurs vies sous le regard bienveillant de leurs familles et de leurs proches.</p>
+            <p>C'est avec un cœur empli de joie qu'ils vous invitent à partager ce moment inoubliable, à Fès, ville de lumière et de traditions.</p>
+          </div>
+          <div class="story-text ar">
+            <p>بعد لقاء جميل ومسار قطعاه معًا، يستعد طاهر ومجدة لتوحيد حياتهما تحت رعاية عائلتيهما وأحبائهما.</p>
+            <p>بقلبٍ مفعم بالفرح، يدعوانكم لمشاركتهما هذه اللحظة التي لا تُنسى، في مدينة فاس، مدينة النور والأصالة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section class="section gallery" id="galerie">
+      <div class="reveal section-inner">
+        <span class="section-kicker">Instants précieux · لحظات غالية</span>
+        <h2 class="section-title">Galerie</h2>
+        <div class="gallery-grid">
+
+          <figure class="photo-frame tilt" data-tilt>
+            <img src="assets/img/bride.jpg" alt="Majda" loading="lazy"
+                 onerror="this.closest('.photo-frame').classList.add('no-photo')">
+            <div class="frame-fallback">
+              <span class="fallback-icon">✦</span>
+              <span class="fallback-label">Majda</span>
+            </div>
+            <div class="frame-glow"></div>
+            <figcaption>Majda</figcaption>
+          </figure>
+
+          <figure class="photo-frame tilt" data-tilt>
+            <img src="assets/img/groom.jpg" alt="Tahar" loading="lazy"
+                 onerror="this.closest('.photo-frame').classList.add('no-photo')">
+            <div class="frame-fallback">
+              <span class="fallback-icon">✦</span>
+              <span class="fallback-label">Tahar</span>
+            </div>
+            <div class="frame-glow"></div>
+            <figcaption>Tahar</figcaption>
+          </figure>
+
+          <figure class="photo-frame tilt" data-tilt>
+            <img src="assets/img/couple-2.jpg" alt="Tahar et Majda" loading="lazy"
+                 onerror="this.closest('.photo-frame').classList.add('no-photo')">
+            <div class="frame-fallback">
+              <span class="fallback-icon">✦</span>
+              <span class="fallback-label">Tahar &amp; Majda</span>
+            </div>
+            <div class="frame-glow"></div>
+            <figcaption>Tahar &amp; Majda</figcaption>
+          </figure>
+
+          <figure class="photo-frame tilt" data-tilt>
+            <img src="assets/img/celebration.jpg" alt="Célébration" loading="lazy"
+                 onerror="this.closest('.photo-frame').classList.add('no-photo')">
+            <div class="frame-fallback">
+              <span class="fallback-icon">✦</span>
+              <span class="fallback-label">Célébration<br><span class="ar">الاحتفال</span></span>
+            </div>
+            <div class="frame-glow"></div>
+            <figcaption>Célébration · الاحتفال</figcaption>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DATE / LIEU / COMPTE A REBOURS -->
+    <section class="section when" id="date-lieu">
+      <div class="hero-pattern subtle" aria-hidden="true"></div>
+      <div class="reveal section-inner">
+        <span class="section-kicker">Le grand jour · يوم العمر</span>
+        <h2 class="section-title" id="dynamic-date">27 Septembre 2026</h2>
+        <p class="dynamic-date-ar" id="dynamic-date-ar">٢٧ سبتمبر ٢٠٢٦</p>
+
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div class="count-card"><span class="count-num" id="cd-days">00</span><span class="count-label">Jours<br><span class="ar">أيام</span></span></div>
+          <div class="count-card"><span class="count-num" id="cd-hours">00</span><span class="count-label">Heures<br><span class="ar">ساعات</span></span></div>
+          <div class="count-card"><span class="count-num" id="cd-min">00</span><span class="count-label">Min.<br><span class="ar">دقائق</span></span></div>
+          <div class="count-card"><span class="count-num" id="cd-sec">00</span><span class="count-label">Sec.<br><span class="ar">ثواني</span></span></div>
+        </div>
+
+        <div class="venue-card">
+          <div class="venue-arch">🕌</div>
+          <h3>Fès, Maroc</h3>
+          <p class="placeholder-text">Lieu exact à confirmer · سيتم تأكيد المكان لاحقًا</p>
+          <div class="map-embed">
+            <iframe
+              title="Carte de Fès"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-5.0800%2C33.9700%2C-4.9200%2C34.0900&amp;layer=mapnik&amp;marker=34.0333%2C-5.0000"
+              loading="lazy">
+            </iframe>
+          </div>
+          <button id="add-calendar" class="btn-secondary">
+            📅 Ajouter à mon agenda <span class="ar">إضافة إلى التقويم</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMME -->
+    <section class="section program" id="programme">
+      <div class="reveal section-inner">
+        <span class="section-kicker">Programme · البرنامج</span>
+        <h2 class="section-title">Déroulé de la journée</h2>
+        <ul class="timeline">
+          <li>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Cérémonie religieuse (Fatiha) <span class="ar">قراءة الفاتحة</span></h4>
+              <p class="placeholder-text">Heure à confirmer · سيتم تأكيد التوقيت</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Réception &amp; photos <span class="ar">الاستقبال والتصوير</span></h4>
+              <p class="placeholder-text">Heure à confirmer · سيتم تأكيد التوقيت</p>
+            </div>
+          </li>
+          <li>
+            <span class="timeline-dot"></span>
+            <div class="timeline-content">
+              <h4>Soirée &amp; célébration <span class="ar">السهرة والاحتفال</span></h4>
+              <p class="placeholder-text">Heure à confirmer · سيتم تأكيد التوقيت</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section rsvp" id="rsvp">
+      <div class="reveal section-inner">
+        <span class="section-kicker">Votre présence compte · حضوركم يسعدنا</span>
+        <h2 class="section-title">Confirmez votre présence</h2>
+        <p class="rsvp-text">Merci de nous faire savoir si vous serez des nôtres avant le 01 Septembre 2026.<br>
+          <span class="ar">يرجى تأكيد حضوركم قبل ١ سبتمبر ٢٠٢٦</span></p>
+        <a class="btn-rsvp" href="mailto:tahar.zerrioui@creditplus.ma?subject=Confirmation%20de%20pr%C3%A9sence%20-%20Mariage%20Tahar%20%26%20Majda%20-%2027.09.2026">
+          Confirmer ma présence · تأكيد الحضور
+        </a>
+        <div class="share-row">
+          <a id="share-whatsapp" class="btn-share" href="#" target="_blank" rel="noopener">
+            Partager sur WhatsApp · مشاركة عبر واتساب
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <button id="music-toggle" class="music-toggle" aria-pressed="false" title="Musique d'ambiance">
+        <span class="music-icon">♪</span>
+      </button>
+      <audio id="bgm" loop preload="none">
+        <source src="assets/audio/ambient.mp3" type="audio/mpeg">
+      </audio>
+      <p class="footer-names">Tahar <span class="amp">&amp;</span> Majda</p>
+      <p class="footer-sub">27 Septembre 2026 · Fès</p>
+    </footer>
+
+  </div>
+
+  <script>
+(() => {
+  'use strict';
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const WEDDING_DATE = new Date('2026-09-27T00:00:00');
+
+  /* ============================================================
+     1. Sparkle / gold-dust ambient particles (canvas)
+     ============================================================ */
+  function initSparkles() {
+    const canvas = document.getElementById('sparkle-canvas');
+    if (!canvas || prefersReducedMotion) return;
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+
+    function makeParticles(count) {
+      return Array.from({ length: count }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.6 + 0.4,
+        speed: Math.random() * 0.25 + 0.05,
+        drift: (Math.random() - 0.5) * 0.15,
+        alpha: Math.random() * 0.6 + 0.2,
+        twinkle: Math.random() * Math.PI * 2,
+      }));
+    }
+
+    resize();
+    particles = makeParticles(Math.min(90, Math.floor((w * h) / 18000)));
+    window.addEventListener('resize', () => {
+      resize();
+      particles = makeParticles(Math.min(90, Math.floor((w * h) / 18000)));
+    });
+
+    function tick() {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach(p => {
+        p.y -= p.speed;
+        p.x += p.drift;
+        p.twinkle += 0.03;
+        if (p.y < -5) { p.y = h + 5; p.x = Math.random() * w; }
+        if (p.x < -5) p.x = w + 5;
+        if (p.x > w + 5) p.x = -5;
+        const a = p.alpha * (0.5 + 0.5 * Math.sin(p.twinkle));
+        ctx.beginPath();
+        ctx.fillStyle = `rgba(241, 223, 168, ${a.toFixed(2)})`;
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
+  }
+
+  /* ============================================================
+     2. Cinematic opening (gate) + confetti burst
+     ============================================================ */
+  function burstParticles(originX, originY) {
+    if (prefersReducedMotion) return;
+    const colors = ['#c9a24b', '#f1dfa8', '#f7d7de', '#e8a9bd'];
+    const count = 36;
+    for (let i = 0; i < count; i++) {
+      const el = document.createElement('div');
+      el.className = 'burst-particle';
+      const size = Math.random() * 8 + 4;
+      el.style.width = `${size}px`;
+      el.style.height = `${size}px`;
+      el.style.left = `${originX}px`;
+      el.style.top = `${originY}px`;
+      el.style.background = colors[Math.floor(Math.random() * colors.length)];
+      document.body.appendChild(el);
+
+      const angle = Math.random() * Math.PI * 2;
+      const distance = Math.random() * 260 + 120;
+      const dx = Math.cos(angle) * distance;
+      const dy = Math.sin(angle) * distance - 80;
+      const duration = Math.random() * 700 + 900;
+
+      el.animate([
+        { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+        { transform: `translate(${dx}px, ${dy}px) scale(0.3)`, opacity: 0 },
+      ], { duration, easing: 'cubic-bezier(.2,.7,.3,1)' }).onfinish = () => el.remove();
+    }
+  }
+
+  function initIntro() {
+    const intro = document.getElementById('intro');
+    const site = document.getElementById('site');
+    const openBtn = document.getElementById('open-invitation');
+    if (!intro || !site || !openBtn) return;
+
+    openBtn.addEventListener('click', () => {
+      const rect = openBtn.getBoundingClientRect();
+      burstParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+      intro.classList.add('opening');
+      site.classList.add('visible');
+      document.body.style.overflow = '';
+
+      setTimeout(() => {
+        intro.classList.add('opened');
+      }, 900);
+    }, { once: true });
+
+    document.body.style.overflow = 'hidden';
+  }
+
+  /* ============================================================
+     3. 3D tilt on photo frames
+     ============================================================ */
+  function initTilt() {
+    if (prefersReducedMotion || window.matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll('[data-tilt]').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = `perspective(700px) rotateX(${(-py * 14).toFixed(2)}deg) rotateY(${(px * 14).toFixed(2)}deg) scale(1.03)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  /* ============================================================
+     4. Countdown timer
+     ============================================================ */
+  function initCountdown() {
+    const days = document.getElementById('cd-days');
+    const hours = document.getElementById('cd-hours');
+    const min = document.getElementById('cd-min');
+    const sec = document.getElementById('cd-sec');
+    if (!days) return;
+
+    function pad(n) { return String(n).padStart(2, '0'); }
+
+    function update() {
+      const diff = WEDDING_DATE.getTime() - Date.now();
+      if (diff <= 0) {
+        days.textContent = hours.textContent = min.textContent = sec.textContent = '00';
+        return;
+      }
+      const d = Math.floor(diff / 86400000);
+      const h = Math.floor((diff % 86400000) / 3600000);
+      const m = Math.floor((diff % 3600000) / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      days.textContent = pad(d);
+      hours.textContent = pad(h);
+      min.textContent = pad(m);
+      sec.textContent = pad(s);
+    }
+    update();
+    setInterval(update, 1000);
+  }
+
+  /* ============================================================
+     5. Dynamic date formatting (FR / AR)
+     ============================================================ */
+  function initDynamicDate() {
+    const frEl = document.getElementById('dynamic-date');
+    const arEl = document.getElementById('dynamic-date-ar');
+    if (!frEl) return;
+    try {
+      const fr = new Intl.DateTimeFormat('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(WEDDING_DATE);
+      frEl.textContent = fr.charAt(0).toUpperCase() + fr.slice(1);
+    } catch (e) { /* keep static fallback already in HTML */ }
+    try {
+      if (arEl) {
+        arEl.textContent = new Intl.DateTimeFormat('ar-MA', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(WEDDING_DATE);
+      }
+    } catch (e) { /* keep static fallback already in HTML */ }
+  }
+
+  /* ============================================================
+     6. Scroll reveal
+     ============================================================ */
+  function initReveal() {
+    const items = document.querySelectorAll('.reveal');
+    if (!items.length) return;
+    if (!('IntersectionObserver' in window) || prefersReducedMotion) {
+      items.forEach(el => el.classList.add('in-view'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(el => observer.observe(el));
+  }
+
+  /* ============================================================
+     7. Ambient music toggle (graceful fallback if no file)
+     ============================================================ */
+  function initMusic() {
+    const btn = document.getElementById('music-toggle');
+    const audio = document.getElementById('bgm');
+    if (!btn || !audio) return;
+
+    audio.addEventListener('error', () => btn.classList.add('hidden'), true);
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play().then(() => {
+          btn.setAttribute('aria-pressed', 'true');
+        }).catch(() => btn.classList.add('hidden'));
+      } else {
+        audio.pause();
+        btn.setAttribute('aria-pressed', 'false');
+      }
+    });
+  }
+
+  /* ============================================================
+     8. Ajouter au calendrier (.ics, sans dépendance externe)
+     ============================================================ */
+  function initAddToCalendar() {
+    const btn = document.getElementById('add-calendar');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const fmt = (d) => d.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+      const start = new Date('2026-09-27T00:00:00Z');
+      const end = new Date('2026-09-28T00:00:00Z');
+      const ics = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Tahar et Majda//Mariage//FR',
+        'BEGIN:VEVENT',
+        `UID:${Date.now()}@tahar-et-majda`,
+        `DTSTAMP:${fmt(new Date())}`,
+        `DTSTART:${fmt(start)}`,
+        `DTEND:${fmt(end)}`,
+        'SUMMARY:Mariage de Tahar & Majda',
+        'DESCRIPTION:Lieu exact a confirmer. Consultez le site d\'invitation pour les mises a jour.',
+        'LOCATION:Fès, Maroc',
+        'END:VEVENT',
+        'END:VCALENDAR',
+      ].join('\r\n');
+
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'mariage-tahar-majda.ics';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  /* ============================================================
+     9. Partage WhatsApp
+     ============================================================ */
+  function initShare() {
+    const link = document.getElementById('share-whatsapp');
+    if (!link) return;
+    const text = encodeURIComponent(
+      `Vous êtes invités au mariage de Tahar & Majda le 27 septembre 2026 à Fès ✨ ${window.location.href}`
+    );
+    link.href = `https://wa.me/?text=${text}`;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    initIntro();
+    initSparkles();
+    initTilt();
+    initCountdown();
+    initDynamicDate();
+    initReveal();
+    initMusic();
+    initAddToCalendar();
+    initShare();
+  });
+})();
+  </script>
+</body>
+</html>
